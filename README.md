@@ -85,6 +85,17 @@ When setting up the ELRS receiver, the configuration process should be done "nor
 
 Due to ELRS default settings though, there will be one more step you need to do if you intend to use the CH5 PWM output pad.  In the ELRS Lua script on your transmitter, set the __ __
 
+## Settings
+There are two major ways to change settings on the Magni Mini - in hardware and in software.
+### Hardware
+All hardware settings changed by bridging solder pads on the board, labelled on the diagram below.
+
+The "E" pads next to the PWM 4 and 5 output pads can be used to enable extended PWM (500-2500) on the respective channels.  This is intended for use with compatible servos and can extend the turning angle range.  By default (when unbridged), this feature is disabled and a "standard" PWM signal (1000-2000) is output.
+
+The "Coasting" pad disables motor breaking and enables motor coasting when bridged.  This is not recommended based on personal experience and the motor driver manufacturer's recommendation, but is available as a feature if desired.
+
+The "Mixing" pad enables on-board mixing when bridged, removing the need to program the model mix on your transmitter.  For any transmitters running EdgeTX, this is not recommended due to the lack of flexibility and adjustment.  This feature is intended for use with budget ELRS controllers that do not have the ability to properly create mixes due to a lack of software.
+
 ## FAQ
 ### My ELRS receiver isn't connecting to the Magni Mini!  How do I fix it?
 Check the following likely configuration issues:
