@@ -9,8 +9,8 @@ The manufacturers and distributors of this product are not responsible for your 
 ## Table of Contents
 - [Overview](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#overview)
 - [Quick Start Guide](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#quick-start-guide)
-- In-Depth Setup
-- Settings
+- [In-Depth Setup](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#in-depth-setup)
+- [Settings](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#settings)
 - [FAQ](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#FAQ)
 
 ## Overview
