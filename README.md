@@ -1,9 +1,10 @@
 # Magni-Mini
-The Magni Mini is an ELRS-compatible dual brushed ESC and PWM breakout board built for combat robotics, similar to the [Malenki Nano](https://github.com/MarkR42/malenki-nano).  This repository serves as the documentation and manual for the Magni Mini.
+Magni Mini is an ELRS-compatible dual brushed ESC and PWM breakout board built for combat robotics.  This repository serves as the documentation and manual for the Magni Mini.
 
 ## Disclaimer and Liability
-Combat robotics, by their nature, are dangerous.  It is your responsibility to follow best safety practices and protect yourself and the people and property around you.
+Combat robotics have the potential to be dangerous.  It is your responsibility to follow best safety practices and take the proper steps to protect yourself and the people and property around you.
 
+The manufacturers and distributors of this product are not responsible for your safety and not liable for any damage or harm caused by the use, proper or improper, of this device.  By using this device, you acknowledge this and accept the full responsibilities for the setup, use, and operation of this device.
 
 ## Table of Contents
 - Overview
@@ -59,8 +60,8 @@ To access software settings, assign a button to the CH6 output on your transmitt
 
 Button Presses:
 1 - LED Brightness (Low/Medium/High) - Default High
-2 - 
-3 - 
+2 - Invert Motor 1 (True/False) - Default False
+3 - Invert Motor 2 (True/False) - Default False
 4 -
 5 - 
 6 - 
