@@ -26,6 +26,8 @@ The Magni Mini is an ELRS-compatible dual brushed ESC with additional PWM output
 - Configuration mode
 
 ## Quick Start Guide
+The Quick Start Guide is intended to get you up and running, well, quick.  For a full explanation of features and settings, review the in-depth documentation following this section and in the FAQ. 
+
 ### Wiring
 A [BetaFPV ELRS Lite receiver](https://betafpv.com/products/elrs-lite-receiver) (flat antenna) can be attached to the Magni Mini board via the castellated pins between the support forks.  With the Magni Mini board facing upwards (LED up), the BetaFPV ELRS Lite receiver should be facing downwards (red antenna down).  Verify that the castellated pin markings are correct, where: 
 - GND -> GND
@@ -39,12 +41,17 @@ Solder the receiver on laying flat, starting with a single pin.  When satisfied 
 Attach the remaining power and peripheral device wires to the Magni Mini, using the following wire diagram for reference.
 
 ### Mixing
-If mixing on the controller (recommended) the channel outputs should match the following:
+Mixing can be done either on the controller (recommended for EdgeTX) or by the Magni Mini.  If mixing on the controller the channel outputs should match the following:
 - CH1: Weapon
 - CH2-CH3: Drive motor outputs
-- CH4-CH5: Additional Weapon/Servo 
+- CH4-CH5: Additional Weapon/Servo
 
-If us
+If mixing is enable on the Magni Mini (see [Hardware Settings](### Hardware Settings) for instructions), the controller channel outputs should match the following:
+- CH1: Weapon
+- CH2: Forward/backwards drive channel input 
+- CH3: Left/right drive channel input
+- CH4-CH5: Additional Weapon/Servo
+
 
 ### Hardware Settings
 There are 4 settings that can be changed exclusively via solder bridges.  Each is marked below on the diagram.
@@ -62,12 +69,10 @@ Button Presses:
 - (1) LED Brightness (Low/Medium/High) - Default High
 - (2) Invert Motor 1 (True/False) - Default False
 - (3) Invert Motor 2 (True/False) - Default False
-
-4 -
-5 - 
-6 - 
-7 - 
-
+- (4) Invert Steering (True/False) - Default False
+- (5) Toggle Steering Power (Low/High) - Default Low
+- (6) Invert PWM4 (True/False) - Default False
+- (7) Invert PWM5 (True/False) - Default False
 
 ## In-Depth Setup
 ### Receiver Mounting
