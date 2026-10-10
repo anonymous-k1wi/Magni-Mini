@@ -15,7 +15,7 @@ Combat robotics, by their nature, are dangerous.  It is your responsibility to f
 ## Overview
 The Magni Mini is an ELRS-compatible dual brushed ESC with additional PWM outputs, built from the ground up with combat robotics in mind.  It adopts the same form factor as the popular [Malenki Nano](https://github.com/MarkR42/malenki-nano), making it a drop-in upgrade for those wishing for better motor drivers, extended PWM signals, and compatibility with the popular [ELRS ecosystem](https://github.com/ExpressLRS/ExpressLRS).
 
-#### Features:
+### Features:
 - ELRS V4 UART/CRSF receiver compatibility
 - 2-6S battery voltage input
 - Dual DRV8231 3.7A motor drivers
@@ -45,8 +45,7 @@ If mixing on the controller (recommended) the channel outputs should match the f
 
 If us
 
-### Settings
-#### Hardware Settings
+### Hardware Settings
 There are 4 settings that can be changed exclusively via solder bridges.  Each is marked below on the diagram.
 
 The "E" pads next to the PWM 4 and 5 output pads can be used to enable extended PWM (500-2500) on the respective channels.  This is intended for use with compatible servos.  By default (when unbridged), this feature is disabled.
@@ -55,7 +54,7 @@ The "Coasting" pad disables motor breaking and enables motor coasting when bridg
 
 The "Mixing" pad enables on-board mixing when bridged, removing the need to program the model mix on your transmitter.  For any transmitters running EdgeTX, this is not recommended due to the lack of flexibility and adjustment.  This feature is intended for use with budget ELRS controllers that do not have the ability to properly create mixes due to a lack of software.
 
-#### Software Settings
+### Software Settings
 To access software settings, assign a button to the CH6 output on your transmitter.  Holding this button high for 5 seconds will enter settings mode (blue LED).  To toggle settings, tap the CH6 button the number of times for the desired setting, then wait for 2.5s.  The LED will flash green the same number of times the button was pressed to confirm.  To exit settings mode, hold the CH6 button for 5 seconds until the LED turns purple, then release.
 
 Button Presses:
