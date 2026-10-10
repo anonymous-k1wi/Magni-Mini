@@ -41,6 +41,7 @@ Solder the receiver on laying flat, starting with a single pin.  When satisfied 
 Alternatively, the ELRS receiver can also be mounted on the backside of the Magni Mini, allowing for a smaller but thicker form factor.  This can be done by using flush cutters to remove the support wings, then attaching the receiver to the back with the same process.
 
 Attach the remaining power and peripheral device wires to the Magni Mini, using the following wire diagram for reference.
+
 <img width="750" height="750" alt="magni_front_diagram_downscaled" src="https://github.com/user-attachments/assets/7bfad5cc-09a7-4552-a2b0-5a145432e051" />
 
 After attaching all wires, cover the ELRS receiver and the Magni Mini with heat shrink to protect the receiver from bending forces.  For additional protection, the ELRS receiver can be epoxied to the Magni Mini support wings to better support it.
