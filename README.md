@@ -63,7 +63,7 @@ If mixing is enable on the Magni Mini (see [Hardware Settings](https://github.co
 ### Hardware Settings
 There are 4 settings that can be changed exclusively via solder bridges.  Each is marked below on the diagram.
 
-<img width="1952" height="1233" alt="magni_solder_bridges" src="https://github.com/user-attachments/assets/ef7edadb-21a3-4268-8812-0be51cc7edec" />
+<img width="792" height="500" alt="magni_solder_bridges_downscaled" src="https://github.com/user-attachments/assets/285344ec-834a-4eef-9809-f60647b02407" />
 
 The "E" pads next to the PWM 4 and 5 output pads can be used to enable stretching to access extended PWM (500-2500) on the respective channels.  This is intended for use with compatible servos.  By default (when unbridged), this feature is disabled.
 
