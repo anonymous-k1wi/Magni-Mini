@@ -2,7 +2,7 @@
 Magni Mini is an ELRS-compatible dual brushed ESC and PWM breakout board built for combat robotics.  This repository serves as the documentation and manual for the Magni Mini.
 
 ## Disclaimer and Liability
-Combat robotics have the potential to be dangerous.  It is your responsibility to follow best safety practices and take the proper steps to protect yourself and the people and property around you.
+Combat robots have the potential to be dangerous.  It is your responsibility to follow best safety practices and take the proper steps to protect yourself and the people and property around you.
 
 The manufacturers and distributors of this product are not responsible for your safety and not liable for any damage or harm caused by the use, proper or improper, of this device.  By using this device, you acknowledge this and accept the full responsibilities for the setup, use, and operation of this device.
 
@@ -15,6 +15,8 @@ The manufacturers and distributors of this product are not responsible for your 
 
 ## Overview
 The Magni Mini is an ELRS-compatible dual brushed ESC with additional PWM outputs, built from the ground up with combat robotics in mind.  It adopts the same form factor as the popular [Malenki Nano](https://github.com/MarkR42/malenki-nano), making it a drop-in upgrade for those wishing for better motor drivers, extended PWM signals, and compatibility with the popular [ELRS ecosystem](https://github.com/ExpressLRS/ExpressLRS).
+
+<img width="500" height="500" alt="magni_front_scale_downscaled" src="https://github.com/user-attachments/assets/f01ec282-2920-4835-8c56-082ed9d47f0c" />
 
 ### Features:
 - ELRS V4 UART/CRSF receiver compatibility
@@ -42,7 +44,7 @@ Alternatively, the ELRS receiver can also be mounted on the backside of the Magn
 
 Attach the remaining power and peripheral device wires to the Magni Mini, using the following wire diagram for reference.
 
-<img width="750" height="750" alt="magni_front_diagram_downscaled" src="https://github.com/user-attachments/assets/7bfad5cc-09a7-4552-a2b0-5a145432e051" />
+<img width="500" height="500" alt="magni_front_diagram_downscaled" src="https://github.com/user-attachments/assets/7f47e2d9-79d0-4539-9f51-40318e172f50" />
 
 After attaching all wires, cover the ELRS receiver and the Magni Mini with heat shrink to protect the receiver from bending forces.  For additional protection, the ELRS receiver can be epoxied to the Magni Mini support wings to better support it.
 
@@ -61,7 +63,9 @@ If mixing is enable on the Magni Mini (see [Hardware Settings](https://github.co
 ### Hardware Settings
 There are 4 settings that can be changed exclusively via solder bridges.  Each is marked below on the diagram.
 
-The "E" pads next to the PWM 4 and 5 output pads can be used to enable extended PWM (500-2500) on the respective channels.  This is intended for use with compatible servos.  By default (when unbridged), this feature is disabled.
+<img width="1952" height="1233" alt="magni_solder_bridges" src="https://github.com/user-attachments/assets/ef7edadb-21a3-4268-8812-0be51cc7edec" />
+
+The "E" pads next to the PWM 4 and 5 output pads can be used to enable stretching to access extended PWM (500-2500) on the respective channels.  This is intended for use with compatible servos.  By default (when unbridged), this feature is disabled.
 
 The "Coasting" pad disables motor breaking and enables motor coasting when bridged.  This is not recommended based on personal experience and the motor driver manufacturer's recommendation, but is available as a feature if desired.
 
