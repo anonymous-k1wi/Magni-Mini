@@ -7,7 +7,7 @@ Combat robotics have the potential to be dangerous.  It is your responsibility t
 The manufacturers and distributors of this product are not responsible for your safety and not liable for any damage or harm caused by the use, proper or improper, of this device.  By using this device, you acknowledge this and accept the full responsibilities for the setup, use, and operation of this device.
 
 ## Table of Contents
-- Overview
+- [Overview](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#overview)
 - Quick Start Guide
 - In-Depth Setup
 - Settings
