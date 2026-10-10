@@ -46,7 +46,7 @@ Mixing can be done either on the controller (recommended for EdgeTX) or by the M
 - CH2-CH3: Drive motor outputs
 - CH4-CH5: Additional Weapon/Servo
 
-If mixing is enable on the Magni Mini (see [Hardware Settings](### Hardware Settings) for instructions), the controller channel outputs should match the following:
+If mixing is enable on the Magni Mini (see [Hardware Settings](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#hardware-settings) for instructions), the controller channel outputs should match the following:
 - CH1: Weapon
 - CH2: Forward/backwards drive channel input 
 - CH3: Left/right drive channel input
