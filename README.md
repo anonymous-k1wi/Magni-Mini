@@ -59,9 +59,9 @@ The "Mixing" pad enables on-board mixing when bridged, removing the need to prog
 To access software settings, assign a button to the CH6 output on your transmitter.  Holding this button high for 5 seconds will enter settings mode (blue LED).  To toggle settings, tap the CH6 button the number of times for the desired setting, then wait for 2.5s.  The LED will flash green the same number of times the button was pressed to confirm.  To exit settings mode, hold the CH6 button for 5 seconds until the LED turns purple, then release.
 
 Button Presses:
-(1) LED Brightness (Low/Medium/High) - Default High
-(2) Invert Motor 1 (True/False) - Default False
-(3) Invert Motor 2 (True/False) - Default False
+- (1) LED Brightness (Low/Medium/High) - Default High
+- (2) Invert Motor 1 (True/False) - Default False
+- (3) Invert Motor 2 (True/False) - Default False
 
 4 -
 5 - 
