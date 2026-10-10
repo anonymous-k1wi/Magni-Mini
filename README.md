@@ -81,7 +81,9 @@ Button Presses:
 ### ELRS Receiver Setup
 The Magni Mini is designed to interface with any unmodified UART/CRSF output ELRS receiver.  That means no custom firmware, special setup parameters, or PWM modification is necessary.  While any receiver can work with it, it is specifically designed to accept a [BetaFPV ELRS Lite Receiver](https://betafpv.com/products/elrs-lite-receiver) (flat antenna) for optimal mounting.  The HappyModel EP1/EP2 receivers have also been tested, which both fit but have less ideal antenna situations.  Other receivers of similar form factors will likely also fit, but have not been verified at this time.
 
-When setting up the ELRS receiver, the configuration process should be done "normally" through the ELRS configurator.
+When setting up the ELRS receiver, the configuration process should be done "normally" through the ELRS configuration.  This means setting a bind phrase, wifi flashing the up-to-date firmware, and... that's it.  It should now be able to interface with the Magni Mini properly.
+
+Due to ELRS default settings though, there will be one more step you need to do if you intend to use the CH5 PWM output pad.  In the ELRS Lua script on your transmitter, set the __ __
 
 ## FAQ
 ### My ELRS receiver isn't connecting to the Magni Mini!  How do I fix it?
@@ -90,5 +92,5 @@ Check the following likely configuration issues:
 - The receiver's buadrate is set to the default value (420000) in the ELRS wifi configuration menu.  This is unlikely to have been changed, but can cause issues if it has been.
 - The wiring is correct.  Ensure that RX/TX swap between the receiver and the Magni Mini.
 
-### PWM Output 5 is jumping between low and high values!  How do I fix it?
+### How do I fix PWM Output 5 is jumping between low and high values?
 By ELRS defaults, only channels 1-4 are sent at a full resolution, which is common for drones.  This can be changed.  In the ELRS Lua script, set the [packet rate and switch mode](https://www.expresslrs.org/software/switch-config/#channel-update-rate-versus-packet-rate) to one compatible with full resolution signals on channel 5.   Recommended settings are 333 and full resolution.
