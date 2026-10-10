@@ -11,7 +11,7 @@ The manufacturers and distributors of this product are not responsible for your 
 - Quick Start Guide
 - In-Depth Setup
 - Settings
-- FAQ
+- [FAQ](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#FAQ)
 
 ## Overview
 The Magni Mini is an ELRS-compatible dual brushed ESC with additional PWM outputs, built from the ground up with combat robotics in mind.  It adopts the same form factor as the popular [Malenki Nano](https://github.com/MarkR42/malenki-nano), making it a drop-in upgrade for those wishing for better motor drivers, extended PWM signals, and compatibility with the popular [ELRS ecosystem](https://github.com/ExpressLRS/ExpressLRS).
@@ -26,7 +26,7 @@ The Magni Mini is an ELRS-compatible dual brushed ESC with additional PWM output
 - Configuration mode
 
 ## Quick Start Guide
-The Quick Start Guide is intended to get you up and running, well, quick.  For a full explanation of features and settings, review the in-depth documentation following this section and in the FAQ. 
+The Quick Start Guide is intended to get you up and running, well, quick.  This means that some information is passed over or skipped here.  For a full explanation of features and settings, review the in-depth documentation following this section and in the FAQ. 
 
 ### Wiring
 A [BetaFPV ELRS Lite receiver](https://betafpv.com/products/elrs-lite-receiver) (flat antenna) can be attached to the Magni Mini board via the castellated pins between the support forks.  With the Magni Mini board facing upwards (LED up), the BetaFPV ELRS Lite receiver should be facing downwards (red antenna down).  Verify that the castellated pin markings are correct, where: 
@@ -38,9 +38,13 @@ A [BetaFPV ELRS Lite receiver](https://betafpv.com/products/elrs-lite-receiver) 
 
 Solder the receiver on laying flat, starting with a single pin.  When satisfied with the alignment, proceed to the remaining pins, ensuring each has a solid connection between the receiver and the Magni Mini on both sides.
 
+Alternatively, the ELRS receiver can also be mounted on the backside of the Magni Mini, allowing for a smaller but thicker form factor.  This can be done by using flush cutters to remove the support wings, then attaching the receiver to the back with the same process.
+
 Attach the remaining power and peripheral device wires to the Magni Mini, using the following wire diagram for reference.
 
-### Mixing
+After attaching all wires, cover the ELRS receiver and the Magni Mini with heat shrink to protect the receiver from bending forces.  For additional protection, the ELRS receiver can be epoxied to the Magni Mini support wings to better support it.
+
+### Transmitter Setup
 Mixing can be done either on the controller (recommended for EdgeTX) or by the Magni Mini.  If mixing on the controller the channel outputs should match the following:
 - CH1: Weapon
 - CH2-CH3: Drive motor outputs
@@ -51,7 +55,6 @@ If mixing is enable on the Magni Mini (see [Hardware Settings](https://github.co
 - CH2: Forward/backwards drive channel input 
 - CH3: Left/right drive channel input
 - CH4-CH5: Additional Weapon/Servo
-
 
 ### Hardware Settings
 There are 4 settings that can be changed exclusively via solder bridges.  Each is marked below on the diagram.
@@ -75,8 +78,17 @@ Button Presses:
 - (7) Invert PWM5 (True/False) - Default False
 
 ## In-Depth Setup
-### Receiver Mounting
-The Magni Mini is designed to interface with any unmodified UART/CRSF output ELRS receiver.  That means no custom firmware, special setup parameters, or PWM modification is necessary.  While any 
+### ELRS Receiver Setup
+The Magni Mini is designed to interface with any unmodified UART/CRSF output ELRS receiver.  That means no custom firmware, special setup parameters, or PWM modification is necessary.  While any receiver can work with it, it is specifically designed to accept a [BetaFPV ELRS Lite Receiver](https://betafpv.com/products/elrs-lite-receiver) (flat antenna) for optimal mounting.  The HappyModel EP1/EP2 receivers have also been tested, which both fit but have less ideal antenna situations.  Other receivers of similar form factors will likely also fit, but have not been verified at this time.
 
+When setting up the ELRS receiver, the configuration process should be done "normally" through the ELRS configurator.
 
-to accept a [BetaFPV ELRS Lite Receiver](https://betafpv.com/products/elrs-lite-receiver) (flat antenna) for optimal mounting.
+## FAQ
+### My ELRS receiver isn't connecting to the Magni Mini!  How do I fix it?
+Check the following likely configuration issues:
+- The receiver/transmitter are running ELRS V4.  The Magni Mini may work with other versions, but it has not been designed to do so or tested with them.  Compatibility with future versions of ELRS will be considered when they release.
+- The receiver's buadrate is set to the default value (420000) in the ELRS wifi configuration menu.  This is unlikely to have been changed, but can cause issues if it has been.
+- The wiring is correct.  Ensure that RX/TX swap between the receiver and the Magni Mini.
+
+### PWM Output 5 is jumping between low and high values!  How do I fix it?
+By ELRS defaults, only channels 1-4 are sent at a full resolution, which is common for drones.  This can be changed.  In the ELRS Lua script, set the [packet rate and switch mode](https://www.expresslrs.org/software/switch-config/#channel-update-rate-versus-packet-rate) to one compatible with full resolution signals on channel 5.   Recommended settings are 333 and full resolution.
