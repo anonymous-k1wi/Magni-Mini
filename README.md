@@ -111,9 +111,21 @@ For nano/lite receivers, most should fit between the support wings of the Magni 
 
 For easiest assembly, it is recommended to solder the ELRS receiver to the Magni Mini by first placing both flat on a solder-safe surface, then double-checking the alignment of the castellated pads.  Ground and 5V should both match between the receiver and Magni Mini, and RX and TX should be flipped.  With the recommended BetaFPV Lite receiver, this results in the red antenna side facing down when the Magni Mini board is facing upwards.
 
-Once the 
+Once aligned, the receiver position can be fixed by "tacking" them together with a single solder joint between the two boards.  Using only a single solder joint initially makes it easier to reflow and adjust this connection until you are satisfied with the receiver position.
+
+After aligned and tacked, the remaining joints can be soldered, one at a time, to create the solid connection between the Magni Mini and receiver.  Be sure to flip the board over to ensure there is adequate solder on both sides.
+
+The remaining wires for power, motors, and PWM signals can then be attached.  Use the following diagram for reference.
+
+<img width="500" height="500" alt="magni_front_diagram_downscaled" src="https://github.com/user-attachments/assets/7f47e2d9-79d0-4539-9f51-40318e172f50" />
+
+After testing everything is working as expected, it is recommended to heat shrink the entire board.  The support wings of the Magni Mini will hold the heat shrink, creating a protective sleeve that protects the receiver from bending.
+
+If additional protection is required, it is also recommended to place a small amount of epoxy in the gaps between the receiver and Magni Mini to bond them together.   
 
 #### Reverse Flip Mounting
+
+
 #### Wired
 
 
