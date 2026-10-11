@@ -95,9 +95,28 @@ The Magni Mini is designed to interface with any unmodified UART/CRSF output ELR
 
 The HappyModel EP1/EP2 receivers have also been tested, which both fit but have less ideal antenna situations.  Other receivers of similar form factors will likely also fit, but have not been verified at this time.  Alternatively, using wires to attach the receiver instead of direct mounting it allow for other receivers to be used.
 
-When setting up the ELRS receiver, the configuration process should be done "normally" through the ELRS configuration.  This means setting a bind phrase, wifi flashing the up-to-date firmware, and... that's it.  It should now be able to interface with the Magni Mini properly.  The Magni Mini communicates with the ELRS receiver via UART communication, specifically at the ELRS default 420000 baudrate, which should not be changed.
+When setting up the ELRS receiver, the configuration process should be done "normally" through the ELRS configuration.  The receiver/transmitter are should be flashed to use ELRS V4.  The Magni Mini may work with older versions, but it has not been designed to do so or tested with them.  Forward compatibility with future versions of ELRS cannot be guaranteed but will be evaluated on a new major version release.  Be sure to also set up a bind phrase and... that's it.  The ELRS receiver should now be able to interface with the Magni Mini properly.  The Magni Mini communicates with the ELRS receiver via UART communication, specifically at the ELRS default 420000 baudrate, which should not be changed.
 
-Due to ELRS default settings, there will be one more step you need to do if you intend to use the CH5 PWM output pad as by default ELRS only sends the first full channels at full resolution.  To extend this to the first 8, the [switch mode](https://www.expresslrs.org/software/switch-config/) needs to be changed.  In the ELRS Lua script on your transmitter, set the refresh rate to 
+Due to ELRS default settings, there will be one more step you need to do if you intend to use the CH5 PWM output pad as by default ELRS only sends the first full channels at full resolution.  To extend this to the first 8, the [switch mode](https://www.expresslrs.org/software/switch-config/) needs to be changed.  In the ELRS Lua script on your transmitter, set the "Packet Rate" to "333Hz Full" and the "Switch Mode" to "8ch".  It is also advised to reassign the ELRS "[arm](https://www.expresslrs.org/software/switch-config/#whats-so-important-with-arming)" trigger if using CH5 for PWM, although it is often otherwise unused for combat robotics applications.  If you do not intend to use the CH5 PWM output, than these modifications are not necessary.
+
+### Receiver Wiring
+After flashing your receiver, it can now be connected to the Magni Mini board.  There are 3 main mounting methods to do so:
+1. Standard flat
+2. Reverse flip
+3. Wired
+#### Standard Flat Mounting
+For the standard method of mounting, the castellated pads of the Magni Mini and ELRS receiver are aligned, then directly soldered together.  The Magni Mini and most ELRS receivers use a standard pitch, so it should be compatible with a wide variety of receivers.
+
+For nano/lite receivers, most should fit between the support wings of the Magni Mini (review the scaling diagram).  These support wings are designed to prevent bending or other external forces from damaging the hard-soldered direct connections between the boards.  While standard flat mounting is not recommended for larger receivers that do not fit between the support wings, it is still possible if the support wings are removed (see [Reverse Flip Mounting](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#Reverse-Flip-Mounting)).
+
+For easiest assembly, it is recommended to solder the ELRS receiver to the Magni Mini by first placing both flat on a solder-safe surface, then double-checking the alignment of the castellated pads.  Ground and 5V should both match between the receiver and Magni Mini, and RX and TX should be flipped.  With the recommended BetaFPV Lite receiver, this results in the red antenna side facing down when the Magni Mini board is facing upwards.
+
+Once the 
+
+#### Reverse Flip Mounting
+#### Wired
+
+
 
 ## Settings
 There are two major ways to change settings on the Magni Mini - in hardware and in software.
@@ -113,7 +132,7 @@ The "Mixing" pad enables on-board mixing when bridged, removing the need to prog
 ## FAQ
 ### My ELRS receiver isn't connecting to the Magni Mini!  How do I fix it?
 Check the following likely configuration issues:
-- The receiver/transmitter are running ELRS V4.  The Magni Mini may work with other versions, but it has not been designed to do so or tested with them.  Compatibility with future versions of ELRS will be considered when they release.
+- The receiver/transmitter are running ELRS V4.  The Magni Mini may work with older versions, but it has not been designed to do so or tested with them.  Forward compatibility with future versions of ELRS cannot be guaranteed but will be evaluated on a new major version release.
 - The receiver's buadrate is set to the default value (420000) in the ELRS wifi configuration menu.  This is unlikely to have been changed, but can cause issues if it has been.
 - The wiring is correct.  Ensure that RX/TX swap between the receiver and the Magni Mini.
 
