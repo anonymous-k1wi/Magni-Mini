@@ -101,9 +101,9 @@ Due to ELRS default settings, there will be one more step you need to do if you 
 
 ### Receiver Wiring
 After flashing your receiver, it can now be connected to the Magni Mini board.  There are 3 main mounting methods to do so:
-1. Standard flat
-2. Reverse flip
-3. Wired
+1. [Standard flat](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#Standard-Flat-Mounting)
+2. [Reverse flip](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#Reverse-Flip-Mounting)
+3. [Wired](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#Wired-Mounting)
 #### Standard Flat Mounting
 For the standard method of mounting, the castellated pads of the Magni Mini and ELRS receiver are aligned, then directly soldered together.  The Magni Mini and most ELRS receivers use a standard pitch, so it should be compatible with a wide variety of receivers.
 
@@ -126,7 +126,7 @@ If additional protection is required, it is also recommended to place a small am
 #### Reverse Flip Mounting
 
 
-#### Wired
+#### Wired Mounting
 
 
 
