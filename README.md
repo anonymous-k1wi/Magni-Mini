@@ -49,6 +49,7 @@ This can be done by using flush cutters to remove the support wings, then attach
 Attach the remaining power and peripheral device wires to the Magni Mini, using the following wire diagram for reference.
 
 <img width="500" height="500" alt="magni_front_diagram_downscaled" src="https://github.com/user-attachments/assets/7f47e2d9-79d0-4539-9f51-40318e172f50" />
+<sup> *Dimensions of Magni Mini board.* </sup>
 
 After attaching all wires, cover the ELRS receiver and the Magni Mini with heat shrink to protect the receiver from bending forces.  
 
