@@ -10,6 +10,7 @@ The manufacturers and distributors of this product are not responsible for your 
 - [Overview](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#overview)
 - [Quick Start Guide](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#quick-start-guide)
 - [In-Depth Setup](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#in-depth-setup)
+- [LED Modes](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#led-modes)
 - [Settings](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#settings)
 - [FAQ](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#troubleshooting--faq)
 
