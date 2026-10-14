@@ -121,36 +121,56 @@ The Magni Mini is designed to interface with any unmodified UART/CRSF output ELR
 
 <sup> *BetaFPV ELRS Lite receiver* </sup>
 
-The HappyModel EP1/EP2 receivers have also been tested, which both fit but have less ideal antenna situations.  Other receivers of similar form factors will likely also fit, but have not been verified at this time.  Alternatively, using wires to attach the receiver instead of direct mounting it allow for other receivers to be used.
+The HappyModel EP1/EP2 receivers have also been tested, which both fit but have less ideal antenna situations.  Other receivers of similar form factors will likely also fit, but have not been verified at this time.  Alternatively, using wires to attach the receiver instead of direct mounting it allows for other receivers to be used.
 
 <img width="590" height="500" alt="IMG_3443" src="https://github.com/user-attachments/assets/aae28b77-1142-4279-9a02-26cc202434bd" />
 
 <sup> *Magni Mini with BetaFPV ELRS Lite receiver (left) and HappyModel EP1 receiver (right)* </sup>
 
-
 When setting up the ELRS receiver, the configuration process should be done "normally" through the ELRS configuration.  The receiver/transmitter are should be flashed to use ELRS V4.  The Magni Mini may work with older versions, but it has not been designed to do so or tested with them.  Forward compatibility with future versions of ELRS cannot be guaranteed but will be evaluated on a new major version release.  Be sure to also set up a bind phrase and... that's it.  The ELRS receiver should now be able to interface with the Magni Mini properly.  The Magni Mini communicates with the ELRS receiver via UART communication, specifically at the ELRS default 420000 baudrate, which should not be changed.
 
 Due to ELRS default settings, there will be one more step you need to do if you intend to use the CH5 PWM output pad as by default ELRS only sends the first full channels at full resolution.  To extend this to the first 8, the [switch mode](https://www.expresslrs.org/software/switch-config/) needs to be changed.  In the ELRS Lua script on your transmitter, set the "Packet Rate" to "333Hz Full" and the "Switch Mode" to "8ch".  It is also advised to reassign the ELRS "[arm](https://www.expresslrs.org/software/switch-config/#whats-so-important-with-arming)" trigger if using CH5 for PWM, although it is often otherwise unused for combat robotics applications.  If you do not intend to use the CH5 PWM output, than these modifications are not necessary.
 
-### Receiver Wiring
+### Wiring
 After flashing your receiver, it can now be connected to the Magni Mini board.  There are 3 main mounting methods to do so:
 1. [Standard flat](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#Standard-Flat-Mounting)
 2. [Reverse flip](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#Reverse-Flip-Mounting)
 3. [Wired](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#Wired-Mounting)
+
+After connecting the receiver, there are several other recommended wiring techniques.
+
 #### Standard Flat Mounting
 For the standard method of mounting, the castellated pads of the Magni Mini and ELRS receiver are aligned, then directly soldered together.  The Magni Mini and most ELRS receivers use a standard pitch, so it should be compatible with a wide variety of receivers.
 
 For nano/lite receivers, most should fit between the support wings of the Magni Mini (review the scaling diagram).  These support wings are designed to prevent bending or other external forces from damaging the hard-soldered direct connections between the boards.  While standard flat mounting is not recommended for larger receivers that do not fit between the support wings, it is still possible if the support wings are removed (see [Reverse Flip Mounting](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#Reverse-Flip-Mounting)).
 
+<img width="384" height="500" alt="magni_socket" src="https://github.com/user-attachments/assets/921d107a-6fc3-406f-8fa6-d28714fa0135" />
+
+<sup> *Magni Mini receiver socket size* </sup>
+
 For easiest assembly, it is recommended to solder the ELRS receiver to the Magni Mini by first placing both flat on a solder-safe surface, then double-checking the alignment of the castellated pads.  Ground and 5V should both match between the receiver and Magni Mini, and RX and TX should be flipped.  With the recommended BetaFPV Lite receiver, this results in the red antenna side facing down when the Magni Mini board is facing upwards.
+
+<img width="280" height="500" alt="IMG_3421" src="https://github.com/user-attachments/assets/c039b3d1-cf4b-479e-bcbf-67a8ed4ecb3d" /> 
+<img width="375" height="500" alt="IMG_3424" src="https://github.com/user-attachments/assets/df829bf9-0ba5-4adb-aa70-6fd8a8afd118" />
+<sup> *Aligning ELRS RX in Magni Mini socket* </sup>
 
 Once aligned, the receiver position can be fixed by "tacking" them together with a single solder joint between the two boards.  Using only a single solder joint initially makes it easier to reflow and adjust this connection until you are satisfied with the receiver position.
 
+<img width="375" height="500" alt="one_solder" src="https://github.com/user-attachments/assets/ddba2930-f553-4a27-9799-c7721f02d138" />
+
+<sup> *Soldering single pin* </sup>
+
 After aligned and tacked, the remaining joints can be soldered, one at a time, to create the solid connection between the Magni Mini and receiver.  Be sure to flip the board over to ensure there is adequate solder on both sides.
+
+<img width="375" height="500" alt="all_solder" src="https://github.com/user-attachments/assets/ac6845c8-dfb7-48a8-947d-8ceb60fa1c32" /> <img width="375" height="500" alt="IMG_3441" src="https://github.com/user-attachments/assets/2218ee47-410d-4bf8-ad39-fa335d73ec00" />
+
+<sup> *All connections soldered to ELRS RX solidly* </sup>
 
 The remaining wires for power, motors, and PWM signals can then be attached.  Use the following diagram for reference.
 
 <img width="500" height="500" alt="magni_front_diagram_downscaled" src="https://github.com/user-attachments/assets/7f47e2d9-79d0-4539-9f51-40318e172f50" />
+
+<sup> *Wiring diagram for Magni Mini* </sup>
 
 After testing everything is working as expected, it is recommended to heat shrink the entire board.  The support wings of the Magni Mini will hold the heat shrink, creating a protective sleeve that protects the receiver from bending.
 
@@ -160,6 +180,8 @@ If additional protection is required, it is also recommended to place a small am
 
 
 #### Wired Mounting
+
+#### General Wiring
 
 
 ## LED Modes
