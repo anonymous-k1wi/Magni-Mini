@@ -161,9 +161,37 @@ If additional protection is required, it is also recommended to place a small am
 #### Wired Mounting
 
 
+## LED Modes
+The Magni Mini board features an RGB LED for user feedback.  The LED can have the following colors, which each indicate different things:
+- [Purple](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#purple)
+- [Orange](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#orange)
+- [Red](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#red)
+- [Blue]
+- [Green]
+
+<img width="540" height="500" alt="magni_led" src="https://github.com/user-attachments/assets/3b370f41-bc09-4b8b-b383-9380e167e9ff" />
+
+<sup> *Magni Mini RGB LED meanings* </sup>
+
+### Purple
+The LED will hold a steady purple color during normal operation.  This indicates that it is receiving communication from an ELRS receiver, the receiver is actively connected to a transmitter, and the motor drivers and PWM signal generators are active.  If the ELRS receiver disconnects from the transmitter in this mode (intentionally or accidentally), the LED will turn [red](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#red) and the PWM generation and motor drivers will be deactivated.
+
+### Orange
+On startup, the LED will hold a steady orange color to indicate it is in standby.  This means that it recognizes an ELRS receiver is present, but that the receiver has not yet connected to a transmitter.  The motor drivers and PWM signal generation are not active in this mode.  Once the ELRS receiver has an active link with the transmitter, the Magni Mini will transfer into normal operation mode ([Purple LED](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#purple)) and it will not be able to re-enter the startup standby mode.
+
+### Red
+A red LED indicates that an error or failsafe has occurred during operation.  The most likely cause for a red LED to appear is an ELRS disconnection (intentional or accidental), but it is also possible for general errors communicating with the receiver to cause this.  When the LED is red, the Magni Mini is in a "failsafe" mode where no PWM signals are generated and the motor drivers are not active.  The Magni Mini will continually check if the ELRS disconnect has been resolved, and if a connection to the transmitter is found, it will return to normal operation ([Purple LED](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#purple)).
+
+### Blue
+The LED will turn blue when in the software settings edit mode.  This is described in more detail in the [software settings section](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#software).
+
+### Green
+The LED will flash green in the software settings edit mode to confirm settings changes.  This is described in more detail in the [software settings section](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#software).
+
+
 
 ## Settings
-There are two major ways to change settings on the Magni Mini - in hardware and in software.
+There are two major ways to change settings on the Magni Mini - in [hardware](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#hardware) and in [software](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#software).
 ### Hardware
 All hardware settings changed by bridging solder pads on the board, labelled on the diagram below.  These are set as physical solder bridges that are read on power on to prevent accidental software overwrites and to ensure purposeful usage.  Do not solder bridges while board is actively powered as it will not change the setting until the next reboot (and you should not solder actively powered electronics).
 
@@ -188,3 +216,6 @@ Check the following likely configuration issues:
 
 ### How do I fix PWM Output 5 is jumping between low and high values?
 By ELRS defaults, only channels 1-4 are sent at a full resolution, which is common for drones.  This can be changed.  In the ELRS Lua script, set the [packet rate and switch mode](https://www.expresslrs.org/software/switch-config/#channel-update-rate-versus-packet-rate) to one compatible with full resolution signals on channel 5.   Recommended settings are 333 and full resolution.
+
+### Why is weapon on channel 1?
+Safety.  The ELRS channels are sent as a single packet to the receiver, and the Magni Mini has to decode them.  This process starts with the first channel and ends with the last, which means that the channel 1 is processed first.  Since the weapon should have priority in any safety-critical moment, it is assigned to channel 1.
