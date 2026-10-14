@@ -166,8 +166,8 @@ The Magni Mini board features an RGB LED for user feedback.  The LED can have th
 - [Purple](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#purple)
 - [Orange](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#orange)
 - [Red](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#red)
-- [Blue]
-- [Green]
+- [Blue](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#blue)
+- [Green](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#green)
 
 <img width="540" height="500" alt="magni_led" src="https://github.com/user-attachments/assets/3b370f41-bc09-4b8b-b383-9380e167e9ff" />
 
@@ -206,6 +206,23 @@ The "Coasting" pad disables motor breaking and enables motor coasting when bridg
 The "Mixing" pad enables on-board drive mixing when bridged, removing the need to program the model mix on your transmitter.  When enabled, CH1 remains the weapon, CH2 becomes the input for forward/backward driving, and CH3 becomes the input for left/right turning.  Channels 4 and 5 remain untouched.  For any transmitters running EdgeTX, this is not recommended due to the lack of flexibility and adjustment, you are better off building your own mix that you can fully tune to your preferences.  This feature is intended to increase accessibility through use with budget ELRS controllers that do not have the ability to properly create mixes due to a lack of software (i.e. the RadioMaster T8L).  Despite this feature's existence, if you have not yet purchased a transmitter, it is recommended to purchase one that has full EdgeTX support.  It'll be worth it, I promise.
 
 ### Software
+The Magni Mini also features a small suite of software settings that enable additional features and tweaks.  These can all be altered in the software settings editing mode.
+
+To enter and interact with this mode, channel 6 is used.  This channel is otherwise not assigned to either the PWM outputs or brushed motor drivers, so it will not interfere with robot operations.  In EdgeTX, assign the channel 6 to a momentary switch or button that is normally low (-100 in EdgeTX, 1000 μs PWM), but toggles to high when pressed (100 in EdgeTX, 2000 μs PWM).  To enter the settings mode, hold the CH6 button down so that the signal is high for 5 seconds.  When the led changes to [blue](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#blue), the Magni Mini is in settings mode and the CH6 button can be released.
+
+Once in settings mode, the CH6 button can be pressed a certain number of times to toggle each of the following settings.  To count as a press sequence, the button must from low to high, then back to low again, repeating the number of times matching the setting intending to be changed.  After the press sequence, CH6 needs to remain "low" for 2.5s consecutively to end the sequence.  To confirm a settings change, the RGB LED will flash [green](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#green) the same number of times that the button was pressed.  If the number of recorded presses exceeds the number for any settings change (too many presses), than the LED will flash red a single time and no settings will be changed.
+
+The settings available for changes (and their corresponding press counts) are listed below, along with a brief description of what each setting does:
+
+- (1) LED Brightness (Low/Medium/High) - Default High: The RGB LED brightness can be cycled between low, medium and high before cycling back to the beginning.
+- (2) Invert Motor 1 (True/False) - Default False: The voltages of the brushed motor driver pads for motor 1 are reversed, intended to remove the need to resolder motors to swap directions.
+- (3) Invert Motor 2 (True/False) - Default False: The voltages of the brushed motor driver pads for motor 2 are reversed, intended to remove the need to resolder motors to swap directions.
+- (4) Swap Motor 1 and Motor 2 Outputs, Invert Steering if Mixing Enabled (True/False) - Default False: Swaps channels controlling motor 1 and motor 2 in software, intended to fix cases where motors are swapped across the robot, generally seen by inverted steering.
+- (5) Toggle Steering Power for Onboard Mixing (Low/High) - Default Low: Toggles steering value (when mixing is enabled by solder bridge) between limited and full.  Limited steering power caps the maximum effect of the turning input with the intention of preventing extreme sensitivity and overshooting targets.  Full steering power does not cap this effect, allowing wheels to move as quickly when turning as when going straight.
+- (6) Invert PWM4 (True/False) - Default False: Inverts the channel signal to PWM pad 4, intended to reverse servo directions.
+- (7) Invert PWM5 (True/False) - Default False: Inverts the channel signal to PWM pad 5, intended to reverse servo directions.
+
+To exit the settings mode and return to normal operation, hold the CH6 button high for 5s (same process as entering settings mode).
 
 ## Troubleshooting & FAQ
 ### My ELRS receiver isn't connecting to the Magni Mini!  How do I fix it?
