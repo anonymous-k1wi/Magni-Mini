@@ -189,7 +189,6 @@ On the Magni Mini board, there are small holes/perforations along the break line
 <sup> *Cut lines for support wings* </sup>
 
 <img width="375" height="500" alt="IMG_3431" src="https://github.com/user-attachments/assets/4549af03-170a-42f7-acbb-59b467ecd194" />  <img width="469" height="500" alt="IMG_3435" src="https://github.com/user-attachments/assets/e6e6dad4-564d-4bec-93c2-8f2d37c5f23c" />
-<img width="375" height="500" alt="IMG_3432" src="https://github.com/user-attachments/assets/0fa21f46-9edd-488e-9116-ffcd6b69c0af" />
 
 <sup> *Trimming support wings* </sup>
 
@@ -200,6 +199,11 @@ After trimming the support wings from the core of the Magni Mini board, the proc
 <sup> *Mounting receiver on the backside of the Magni Mini board* </sup>
 
 #### Wired Mounting
+An alternative to the [reverse flip mounting](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#Reverse-Flip-Mounting) is to relocate the receiver to another position using external wires.  In this configuration, the Magni Mini behavior is not altered, only it's form factor.  This can be done relatively easily, using the following wiring diagram.  Remember that with UART wiring, RX should connect to TX, and TX should connect to RX. 
+
+<img width="329" height="500" alt="magni_rxwires" src="https://github.com/user-attachments/assets/d5579296-2525-47d2-bf5e-0f7ad7a0bbd1" />
+
+<sup> *Magni Mini pad diagram for ELRS receivers* </sup>
 
 #### General Wiring
 
