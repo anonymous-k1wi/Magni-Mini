@@ -107,8 +107,8 @@ Button Presses:
 - (1) LED Brightness (Low/Medium/High) - Default High
 - (2) Invert Motor 1 (True/False) - Default False
 - (3) Invert Motor 2 (True/False) - Default False
-- (4) Invert Steering (True/False) - Default False
-- (5) Toggle Steering Power (Low/High) - Default Low
+- (4) Swap Motor 1 and Motor 2 Outputs, Invert Steering if Mixing Enabled (True/False) - Default False
+- (5) Toggle Steering Power for Onboard Mixing (Low/High) - Default Low
 - (6) Invert PWM4 (True/False) - Default False
 - (7) Invert PWM5 (True/False) - Default False
 
@@ -173,7 +173,7 @@ The "Coasting" pad disables motor breaking and enables motor coasting when bridg
 
 The "Mixing" pad enables on-board mixing when bridged, removing the need to program the model mix on your transmitter.  For any transmitters running EdgeTX, this is not recommended due to the lack of flexibility and adjustment.  This feature is intended for use with budget ELRS controllers that do not have the ability to properly create mixes due to a lack of software.
 
-## FAQ
+## Troubleshooting & FAQ
 ### My ELRS receiver isn't connecting to the Magni Mini!  How do I fix it?
 Check the following likely configuration issues:
 - The receiver/transmitter are running ELRS V4.  The Magni Mini may work with older versions, but it has not been designed to do so or tested with them.  Forward compatibility with future versions of ELRS cannot be guaranteed but will be evaluated on a new major version release.
