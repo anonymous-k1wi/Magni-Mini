@@ -39,7 +39,7 @@ The Magni Mini is an ELRS-compatible dual brushed ESC with additional PWM output
 The Quick Start Guide is intended to get you up and running, well, quick.  This means that some information is passed over or skipped here.  For a full explanation of features and settings, review the information in the in-depth [documentation](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#in-depth-setup) following this section and in the [FAQ](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#FAQ). 
 
 ### Wiring
-A [BetaFPV ELRS Lite receiver](https://betafpv.com/products/elrs-lite-receiver) (flat antenna) can be attached to the Magni Mini board via the castellated pins between the support forks.  With the Magni Mini board facing upwards (LED up), the BetaFPV ELRS Lite receiver should be facing downwards (red antenna down).  Verify that the castellated pin markings are correct, where: 
+A [BetaFPV ELRS Lite receiver](https://betafpv.com/products/elrs-lite-receiver) (not included) can be attached to the Magni Mini board via the castellated pins between the support forks.  With the Magni Mini board facing upwards (LED up), the BetaFPV ELRS Lite receiver should be facing downwards (red antenna down).  Verify that the castellated pin markings are correct, where: 
 - GND -> GND
 - 5V -> 5V
 - RX -> TX
@@ -48,15 +48,26 @@ A [BetaFPV ELRS Lite receiver](https://betafpv.com/products/elrs-lite-receiver) 
 
 Solder the receiver on laying flat, starting with a single pin.  
 
+<img width="375" height="500" alt="one_solder" src="https://github.com/user-attachments/assets/480c6cb2-4c5e-495b-ad16-2b8e0914f343" />
+
+<sup> *ELRS receiver soldered with a single connection* </sup>
+
 When satisfied with the alignment, proceed to the remaining pins, ensuring each has a solid connection between the receiver and the Magni Mini on both sides.
 
-Alternatively, the ELRS receiver can also be mounted on the backside of the Magni Mini, allowing for a smaller but thicker form factor.  
+<img width="375" height="500" alt="all_solder" src="https://github.com/user-attachments/assets/f1fae401-cc09-4f39-a2ef-da51b0e7a311" />
 
-This can be done by using flush cutters to remove the support wings, then attaching the receiver to the back with the same process.
+<sup> *ELRS receiver with all connections soldered* </sup>
+
+Alternatively, the ELRS receiver can also be of the Magni Mini, allowing for a smaller but thicker form factor.  For more details, see "[Reverse Flip Mounting](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#Reverse-Flip-Mounting)" 
+
+<img width="667" height="500" alt="reverse_flip" src="https://github.com/user-attachments/assets/8c46750d-7477-4445-9ce9-ccc40cae7644" />
+
+<sup> *ELRS receiver mounted in the reverse/flip configuration* </sup>
 
 Attach the remaining power and peripheral device wires to the Magni Mini, using the following wire diagram for reference.
 
-<img width="500" height="500" alt="magni_front_diagram_downscaled" src="https://github.com/user-attachments/assets/7f47e2d9-79d0-4539-9f51-40318e172f50" />
+<img width="500" height="500" alt="magni_front_diagram_downscaled" src="https://github.com/user-attachments/assets/7f47e2d9-79d0-4539-9f51-40318e172f50" />  <img width="403" height="500" alt="wired" src="https://github.com/user-attachments/assets/da00f4bf-dd33-494f-afda-ba532ec7e037" />
+
 
 <sup> *Magni Mini wiring diagram* </sup>
 
