@@ -16,9 +16,13 @@ The manufacturers and distributors of this product are not responsible for your 
 ## Overview
 The Magni Mini is an ELRS-compatible dual brushed ESC with additional PWM outputs, built from the ground up with combat robotics in mind.  It adopts the same form factor as the popular [Malenki Nano](https://github.com/MarkR42/malenki-nano), making it a drop-in upgrade for those wishing for better motor drivers, extended PWM signals, and compatibility with the popular [ELRS ecosystem](https://github.com/ExpressLRS/ExpressLRS).
 
-<img width="710" height="500" alt="IMG_2994" src="https://github.com/user-attachments/assets/1db4ff31-0d2e-44ba-8fa5-b63d1ecb9a92" />  <img width="500" height="500" alt="magni_front_scale_downscaled" src="https://github.com/user-attachments/assets/f01ec282-2920-4835-8c56-082ed9d47f0c" />
+<img width="710" height="500" alt="IMG_2994" src="https://github.com/user-attachments/assets/1db4ff31-0d2e-44ba-8fa5-b63d1ecb9a92" />  
 
-<sup> *Board comparison with Magni Mini (left), Malenki Nano (right).  Magni Mini Board with dimensions.* </sup>
+<sup> *Board comparison with Magni Mini (left), Malenki Nano (right)* </sup>
+
+<img width="500" height="500" alt="magni_front_scale_downscaled" src="https://github.com/user-attachments/assets/f01ec282-2920-4835-8c56-082ed9d47f0c" />
+
+<sup> *Magni Mini Board with dimensions* </sup>
 
 ### Features:
 - ELRS V4 UART/CRSF receiver compatibility
@@ -63,13 +67,13 @@ Attach the remaining power and peripheral device wires to the Magni Mini, using 
 
 <img width="500" height="500" alt="magni_front_diagram_downscaled" src="https://github.com/user-attachments/assets/7f47e2d9-79d0-4539-9f51-40318e172f50" />  <img width="403" height="500" alt="wired" src="https://github.com/user-attachments/assets/da00f4bf-dd33-494f-afda-ba532ec7e037" />
 
+<sup> *Magni Mini wiring diagram, example wired board* </sup>
 
-<sup> *Magni Mini wiring diagram* </sup>
+After attaching all wires, cover the ELRS receiver and the Magni Mini with heat shrink to protect the receiver from bending forces.  For additional protection, the ELRS receiver can be epoxied to the Magni Mini support wings to better support it.
 
+<img width="352" height="500" alt="shrunk" src="https://github.com/user-attachments/assets/147313c6-fc08-441a-945e-cb6d8a610999" />
 
-After attaching all wires, cover the ELRS receiver and the Magni Mini with heat shrink to protect the receiver from bending forces.  
-
-For additional protection, the ELRS receiver can be epoxied to the Magni Mini support wings to better support it.
+<sup> *Magni Mini wired and covered in heat shrink to protect receiver* </sup>
 
 ### Transmitter Setup
 Mixing can be done either on the controller (recommended for EdgeTX) or by the Magni Mini (recommended for basic ELRS controllers).  If mixing on the controller the channel outputs should match the following:
@@ -97,7 +101,7 @@ The "Coasting" pad disables motor breaking and enables motor coasting when bridg
 The "Mixing" pad enables on-board mixing when bridged, removing the need to program the model mix on your transmitter.  For any transmitters running EdgeTX, this is not recommended due to the lack of flexibility and adjustment.  This feature is intended for use with budget ELRS controllers that do not have the ability to properly create mixes due to a lack of software.
 
 ### Software Settings
-To access software settings, assign a button to the CH6 output on your transmitter.  Holding this button high for 5 seconds will enter settings mode (blue LED).  To toggle settings, tap the CH6 button the number of times for the desired setting, then wait for 2.5s.  The LED will flash green the same number of times the button was pressed to confirm.  To exit settings mode, hold the CH6 button for 5 seconds until the LED turns purple, then release.
+To access software settings, assign a button to the CH6 output on your transmitter.  Holding this button high (>1500) for 5 seconds will enter settings mode (blue LED).  To toggle settings, tap the CH6 button the number of times (>1500) for the desired setting, then wait for 2.5s to confirm.  The LED will flash green the same number of times the button was pressed for visual confirmation.  To exit settings mode, hold the CH6 button for 5 seconds until the LED turns purple, then release.
 
 Button Presses:
 - (1) LED Brightness (Low/Medium/High) - Default High
