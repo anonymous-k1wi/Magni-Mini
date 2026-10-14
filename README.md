@@ -152,13 +152,14 @@ For easiest assembly, it is recommended to solder the ELRS receiver to the Magni
 
 <img width="280" height="500" alt="IMG_3421" src="https://github.com/user-attachments/assets/c039b3d1-cf4b-479e-bcbf-67a8ed4ecb3d" /> 
 <img width="375" height="500" alt="IMG_3424" src="https://github.com/user-attachments/assets/df829bf9-0ba5-4adb-aa70-6fd8a8afd118" />
+
 <sup> *Aligning ELRS RX in Magni Mini socket* </sup>
 
 Once aligned, the receiver position can be fixed by "tacking" them together with a single solder joint between the two boards.  Using only a single solder joint initially makes it easier to reflow and adjust this connection until you are satisfied with the receiver position.
 
 <img width="375" height="500" alt="one_solder" src="https://github.com/user-attachments/assets/ddba2930-f553-4a27-9799-c7721f02d138" />
 
-<sup> *Soldering single pin* </sup>
+<sup> *Single pin soldered* </sup>
 
 After aligned and tacked, the remaining joints can be soldered, one at a time, to create the solid connection between the Magni Mini and receiver.  Be sure to flip the board over to ensure there is adequate solder on both sides.
 
@@ -172,12 +173,31 @@ The remaining wires for power, motors, and PWM signals can then be attached.  Us
 
 <sup> *Wiring diagram for Magni Mini* </sup>
 
-After testing everything is working as expected, it is recommended to heat shrink the entire board.  The support wings of the Magni Mini will hold the heat shrink, creating a protective sleeve that protects the receiver from bending.
+After testing everything is working as expected, it is recommended to heat shrink the entire board.  The support wings of the Magni Mini will hold the heat shrink, creating a protective sleeve that protects the receiver from bending.  If additional protection is required, it is also recommended to place a small amount of epoxy in the gaps between the receiver and Magni Mini to bond them together.   
 
-If additional protection is required, it is also recommended to place a small amount of epoxy in the gaps between the receiver and Magni Mini to bond them together.   
+<img width="352" height="500" alt="shrunk" src="https://github.com/user-attachments/assets/c2691f09-64a4-4640-b5d2-d03e5d78f89f" />
+
+<sup> *Magni Mini, soldered and heat shrunk to protect receiver from bending* </sup>
 
 #### Reverse Flip Mounting
+In situations where space is limited, it is possible trim the support wings and to reverse and flip the ELRS receiver, mounting it on the backside to make it smaller at the cost of being slightly thicker.
 
+On the Magni Mini board, there are small holes/perforations along the break line where the support wings meet the body.  To remove the wings, which can be done safely as the wings have no electronics, it is recommended to use a pair of flush cutters to cut along the line.  Be careful to avoid any components and make the cuts on the line.  Manufacturers/distributors are not responsible for damage caused by improper trimming.
+
+<img width="439" height="500" alt="magni_cut" src="https://github.com/user-attachments/assets/495cfaa3-c436-4105-bc83-7299925e6b78" />
+
+<sup> *Cut lines for support wings* </sup>
+
+<img width="375" height="500" alt="IMG_3431" src="https://github.com/user-attachments/assets/4549af03-170a-42f7-acbb-59b467ecd194" />  <img width="469" height="500" alt="IMG_3435" src="https://github.com/user-attachments/assets/e6e6dad4-564d-4bec-93c2-8f2d37c5f23c" />
+<img width="375" height="500" alt="IMG_3432" src="https://github.com/user-attachments/assets/0fa21f46-9edd-488e-9116-ffcd6b69c0af" />
+
+<sup> *Trimming support wings* </sup>
+
+After trimming the support wings from the core of the Magni Mini board, the process remains roughly the same as the standard mounting.  First, the receiver is aligned with the Magni Mini (with BetaFPV Lite ELRS, red antenna should be hidden), then a single pin is soldered.  With the flat antenna of the BetaFPV Lite ELRS receiver, the distance between the pads is small enough that it can be bridged with solder alone.  For other receivers, wire may be necessary to minimize package size.  Adjust your mounting technique accordingly.  After soldering one pin and adjusting alignment, then the remaining 3 pads can also be soldered.
+
+<img width="595" height="500" alt="IMG_3450" src="https://github.com/user-attachments/assets/1ae2d6ca-8d03-4c55-9ca6-2c04302dbeee" /> <img width="538" height="500" alt="IMG_3452" src="https://github.com/user-attachments/assets/475c438d-76e6-47d0-b3d8-5f2199cc6317" />
+
+<sup> *Mounting receiver on the backside of the Magni Mini board* </sup>
 
 #### Wired Mounting
 
