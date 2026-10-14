@@ -11,7 +11,7 @@ The manufacturers and distributors of this product are not responsible for your 
 - [Quick Start Guide](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#quick-start-guide)
 - [In-Depth Setup](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#in-depth-setup)
 - [Settings](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#settings)
-- [FAQ](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#FAQ)
+- [FAQ](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#troubleshooting--faq)
 
 ## Overview
 The Magni Mini is an ELRS-compatible dual brushed ESC with additional PWM outputs, built from the ground up with combat robotics in mind.  It adopts the same form factor as the popular [Malenki Nano](https://github.com/MarkR42/malenki-nano), making it a drop-in upgrade for those wishing for better motor drivers, extended PWM signals, and compatibility with the popular [ELRS ecosystem](https://github.com/ExpressLRS/ExpressLRS).
@@ -35,7 +35,7 @@ The Magni Mini is an ELRS-compatible dual brushed ESC with additional PWM output
 - Configuration mode
 
 ## Quick Start Guide
-The Quick Start Guide is intended to get you up and running, well, quick.  This means that some information is passed over or skipped here.  For a full explanation of features and settings, review the information in the in-depth [documentation](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#in-depth-setup) following this section and in the [FAQ](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#FAQ). 
+The Quick Start Guide is intended to get you up and running, well, quick.  This means that some information is passed over or skipped here.  For a full explanation of features and settings, review the information in the in-depth [documentation](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#in-depth-setup) following this section and in the [FAQ](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#troubleshooting--faq). 
 
 ### Wiring
 A [BetaFPV ELRS Lite receiver](https://betafpv.com/products/elrs-lite-receiver) (not included) can be attached to the Magni Mini board via the castellated pins between the support forks.  With the Magni Mini board facing upwards (LED up), the BetaFPV ELRS Lite receiver should be facing downwards (red antenna down).  Verify that the castellated pin markings are correct, where: 
@@ -165,13 +165,19 @@ If additional protection is required, it is also recommended to place a small am
 ## Settings
 There are two major ways to change settings on the Magni Mini - in hardware and in software.
 ### Hardware
-All hardware settings changed by bridging solder pads on the board, labelled on the diagram below.
+All hardware settings changed by bridging solder pads on the board, labelled on the diagram below.  These are set as physical solder bridges that are read on power on to prevent accidental software overwrites and to ensure purposeful usage.  Do not solder bridges while board is actively powered as it will not change the setting until the next reboot (and you should not solder actively powered electronics).
 
-The "E" pads next to the PWM 4 and 5 output pads can be used to enable extended PWM (500-2500) on the respective channels.  This is intended for use with compatible servos and can extend the turning angle range.  By default (when unbridged), this feature is disabled and a "standard" PWM signal (1000-2000) is output.
+<img width="792" height="500" alt="magni_solder_bridges_downscaled" src="https://github.com/user-attachments/assets/285344ec-834a-4eef-9809-f60647b02407" />
 
-The "Coasting" pad disables motor breaking and enables motor coasting when bridged.  This is not recommended based on personal experience and the motor driver manufacturer's recommendation, but is available as a feature if desired.
+<sup> *Magni Mini solder bridge locations* </sup>
 
-The "Mixing" pad enables on-board mixing when bridged, removing the need to program the model mix on your transmitter.  For any transmitters running EdgeTX, this is not recommended due to the lack of flexibility and adjustment.  This feature is intended for use with budget ELRS controllers that do not have the ability to properly create mixes due to a lack of software.
+The "E" pads next to the PWM 4 and 5 output pads can be used to enable extended PWM (500-2500) on the respective channels.  This is intended for use with compatible servos and can extend the turning angle range.  By default (when unbridged), this feature is disabled and a "standard" PWM signal (1000-2000) is output.  This feature is not provided for the PWM 1 output pad (W) as extended PWM is generally not used with weapon ESCs.
+
+The "Coasting" pad disables motor breaking and enables motor coasting when bridged.  This is not recommended based on personal experience and the motor driver manufacturer's recommendation, but is available as a feature if desired.  This could *potentially* be useful in builds that already have a high drivetrain resistance and will stop quickly, but this should be preformed at your own risk.
+
+The "Mixing" pad enables on-board drive mixing when bridged, removing the need to program the model mix on your transmitter.  When enabled, CH1 remains the weapon, CH2 becomes the input for forward/backward driving, and CH3 becomes the input for left/right turning.  Channels 4 and 5 remain untouched.  For any transmitters running EdgeTX, this is not recommended due to the lack of flexibility and adjustment, you are better off building your own mix that you can fully tune to your preferences.  This feature is intended to increase accessibility through use with budget ELRS controllers that do not have the ability to properly create mixes due to a lack of software (i.e. the RadioMaster T8L).  Despite this feature's existence, if you have not yet purchased a transmitter, it is recommended to purchase one that has full EdgeTX support.  It'll be worth it, I promise.
+
+### Software
 
 ## Troubleshooting & FAQ
 ### My ELRS receiver isn't connecting to the Magni Mini!  How do I fix it?
