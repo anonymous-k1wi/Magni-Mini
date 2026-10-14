@@ -16,14 +16,9 @@ The manufacturers and distributors of this product are not responsible for your 
 ## Overview
 The Magni Mini is an ELRS-compatible dual brushed ESC with additional PWM outputs, built from the ground up with combat robotics in mind.  It adopts the same form factor as the popular [Malenki Nano](https://github.com/MarkR42/malenki-nano), making it a drop-in upgrade for those wishing for better motor drivers, extended PWM signals, and compatibility with the popular [ELRS ecosystem](https://github.com/ExpressLRS/ExpressLRS).
 
-<img width="710" height="500" alt="IMG_2994" src="https://github.com/user-attachments/assets/1db4ff31-0d2e-44ba-8fa5-b63d1ecb9a92" />
+<img width="710" height="500" alt="IMG_2994" src="https://github.com/user-attachments/assets/1db4ff31-0d2e-44ba-8fa5-b63d1ecb9a92" />  <img width="500" height="500" alt="magni_front_scale_downscaled" src="https://github.com/user-attachments/assets/f01ec282-2920-4835-8c56-082ed9d47f0c" />
 
-<sup> *Magni Mini (left), Malenki Nano (right)* </sup>
-
-<img width="500" height="500" alt="magni_front_scale_downscaled" src="https://github.com/user-attachments/assets/f01ec282-2920-4835-8c56-082ed9d47f0c" />
-
-<sup> *Dimensions of Magni Mini board* </sup>
-
+<sup> *Board comparison with Magni Mini (left), Malenki Nano (right).  Magni Mini Board with dimensions.* </sup>
 
 ### Features:
 - ELRS V4 UART/CRSF receiver compatibility
