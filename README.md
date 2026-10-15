@@ -206,6 +206,11 @@ An alternative to the [reverse flip mounting](https://github.com/anonymous-k1wi/
 <sup> *Magni Mini pad diagram for ELRS receivers* </sup>
 
 #### General Wiring
+For wiring the Magni Mini with the remaining components in your robot, the following items are generally recommended or worth mentioning:
+- For higher voltage systems (especially for weight classes above fairy), use of a capacitor/TVS diode on the weapon ESC input is recommended to prevent or limit voltage spikes
+- There are two sets of battery voltage power pads.  One is intended for the voltage input from the battery/switch.  The other is intended for power distribution to a weapon ESC.  If there are issues fitting both wires on one side of the board, one set can be soldered to the pads on the reverse side.
+- For servos that need 5V power, it is recommended to use an external BEC instead of using the same 5V power circuit the receiver uses.
+-  It is not recommended to put wires though the holes on any pads, they are merely there to improve pad adhesion.  Instead, it is recommended to solder wires flat to the pads.
 
 
 ## LED Modes
