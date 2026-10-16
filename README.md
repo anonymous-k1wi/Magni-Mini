@@ -115,7 +115,7 @@ Button Presses:
 
 ## In-Depth Setup
 ### ELRS Receiver Setup
-The Magni Mini is designed to interface with any unmodified UART/CRSF output ELRS receiver running V4 firmware.  That means no custom firmware, special setup parameters, or PWM modification is necessary.  While any UART receiver can work with it, it is specifically designed to accept a [BetaFPV ELRS Lite Receiver](https://betafpv.com/products/elrs-lite-receiver) (flat antenna) for optimal direct mounting.  
+The Magni Mini is designed to interface with any unmodified UART/CRSF output ELRS receiver running V4 firmware.  That means no custom firmware, special setup parameters, or PWM modification is necessary.  While any UART receiver can work with it, it is specifically designed to accept a [BetaFPV ELRS Lite Receiver](https://betafpv.com/products/elrs-lite-receiver) (flat antenna) for optimal direct mounting and form factor.  
 
 <img width="500" height="500" alt="ELRS_Lite_Receiver_Flat_Antenna_V1 2_side_view_720x" src="https://github.com/user-attachments/assets/e0f10dd1-b8b1-499f-b68e-63aea7c2c60e" />
 
