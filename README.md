@@ -212,7 +212,7 @@ For wiring the Magni Mini with the remaining components in your robot, the follo
 - For higher voltage systems (especially for weight classes above fairy), use of a capacitor/TVS diode on the weapon ESC input is recommended to prevent or limit voltage spikes
 - There are two sets of battery voltage power pads.  One is intended for the voltage input from the battery/switch.  The other is intended for power distribution to a weapon ESC.  If there are issues fitting both wires on one side of the board, one set can be soldered to the pads on the reverse side.
 - For servos that need 5V power, it is recommended to use an external BEC instead of using the same 5V power circuit the receiver uses.
--  It is not recommended to put wires though the holes on any pads, they are merely there to improve pad adhesion.  Instead, it is recommended to solder wires flat to the pads.
+- It is not recommended to put wires though the holes on any pads, they are merely there to improve pad adhesion.  Instead, it is recommended to solder wires flat to the pads.
 
 
 ## LED Modes
@@ -290,3 +290,6 @@ By ELRS defaults, only channels 1-4 are sent at a full resolution, which is comm
 
 ### Why is weapon on channel 1?
 Safety.  The ELRS channels are sent as a single packet to the receiver, and the Magni Mini has to decode them.  This process starts with the first channel and ends with the last, which means that the channel 1 is processed first.  Since the weapon should have priority in any safety-critical moment, it is assigned to channel 1.
+
+### Why aren't my motors moving?
+Due to internal current protections in the motor drivers, motors with too low of an internal resistance may register as a "short", causing the motor drivers to stop sending current to prevent the motor from blowing up.  This is usually seen in cases where the input voltage far exceeds the recommended voltage for the motors (i.e. trying to run an N20 motor off of a 6s battery). 
