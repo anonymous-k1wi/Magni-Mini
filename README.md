@@ -52,13 +52,13 @@ Solder the receiver on laying flat, starting with a single pin.
 
 <sup> *ELRS receiver soldered with a single connection* </sup>
 
-When satisfied with the alignment, proceed to the remaining pins, ensuring each has a solid connection between the receiver and the Magni Mini on both sides.
+When satisfied with the alignment, proceed to the remaining pins, ensuring each has a solid connection between the receiver and the Magni Mini.  Flip over and ensure solder is well-flowed on both sides.
 
 <img width="375" height="500" alt="all_solder" src="https://github.com/user-attachments/assets/f1fae401-cc09-4f39-a2ef-da51b0e7a311" />
 
 <sup> *ELRS receiver with all connections soldered* </sup>
 
-Alternatively, the ELRS receiver can also be of the Magni Mini, allowing for a smaller but thicker form factor.  For more details, see "[Reverse Flip Mounting](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#Reverse-Flip-Mounting)" 
+Alternatively, the ELRS receiver can also be mounted on the back of the Magni Mini, allowing for a smaller but thicker form factor.  For more details, see "[Reverse Flip Mounting](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#Reverse-Flip-Mounting)" 
 
 <img width="667" height="500" alt="reverse_flip" src="https://github.com/user-attachments/assets/8c46750d-7477-4445-9ce9-ccc40cae7644" />
 
