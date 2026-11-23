@@ -5,12 +5,12 @@ Magni Mini is an ELRS-compatible dual brushed ESC and PWM breakout board built f
 
 Magni Mini is still actively under development and testing, so this page is subject to change.
 
-<sup> *This documentation is currently on Rev. 1.  Document changelog is listed below:* </sup>
+<sup> *This documentation is currently on Rev. 1.  Document changelog is listed below:
 ## Changelog:
 Rev. 1: Initial version, reflects operations and characteristics of prototype alpha units.
 Rev. 2: Documentation updated to reflect changes made for beta units.
 - Changed weapon pad default PWM input to CH3, default drive is now CH1 and CH2
-- Added solder bridge toggle for weapon channel swapping between CH3 and CH1
+- Added solder bridge toggle for weapon channel swapping between CH3 and CH1* </sup>
 
 ## Disclaimer and Liability
 Combat robots have the potential to be dangerous.  It is your responsibility to follow best safety practices and take the proper steps to protect yourself and the people and property around you.
