@@ -1,7 +1,16 @@
 # Magni-Mini
-Magni Mini is an ELRS-compatible dual brushed ESC and PWM breakout board built for combat robotics.  This repository serves as the documentation and manual for the Magni Mini.  Magni Mini is still actively under development and testing, so this page is subject to change.
+Magni Mini is an ELRS-compatible dual brushed ESC and PWM breakout board built for combat robotics.  This repository serves as the documentation and manual for the Magni Mini.  
 
 <img width="721" height="750" alt="magni_mini_img2" src="https://github.com/user-attachments/assets/2abe3230-772c-4a78-a590-29741e8a5b37" />
+
+Magni Mini is still actively under development and testing, so this page is subject to change.
+
+<sup> *This documentation is currently on Rev. 1.  Document changelog is listed below:* </sup>
+## Changelog:
+Rev. 1: Initial version, reflects operations and characteristics of prototype alpha units.
+Rev. 2: Documentation updated to reflect changes made for beta units.
+- Changed weapon pad default PWM input to CH3, default drive is now CH1 and CH2
+- Added solder bridge toggle for weapon channel swapping between CH3 and CH1
 
 ## Disclaimer and Liability
 Combat robots have the potential to be dangerous.  It is your responsibility to follow best safety practices and take the proper steps to protect yourself and the people and property around you.
@@ -80,24 +89,26 @@ After attaching all wires, cover the ELRS receiver and the Magni Mini with heat 
 
 ### Transmitter Setup
 Mixing can be done either on the controller (recommended for EdgeTX) or by the Magni Mini (recommended for basic ELRS controllers).  If mixing on the controller the channel outputs should match the following:
-- CH1: Weapon
-- CH2-CH3: Drive motor outputs
+- CH1-CH2: Drive motor outputs
+- CH3: Weapon
 - CH4-CH5: Additional Weapon/Servo
 
 If mixing is enable on the Magni Mini (see [Hardware Settings](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#hardware-settings) for instructions), the controller channel outputs should match the following:
-- CH1: Weapon
-- CH2: Forward/backwards drive channel input 
-- CH3: Left/right drive channel input
+- CH1: Forward/backwards drive channel input 
+- CH2: Left/right drive channel input
+- CH3: Weapon
 - CH4-CH5: Additional Weapon/Servo
 
 ### Hardware Settings
-There are 4 settings that can be changed exclusively via solder bridges.  Each is marked below on the diagram.
+There are 5 settings that can be changed exclusively via solder bridges.  Each is marked below on the diagram.
 
 <img width="792" height="500" alt="magni_solder_bridges_downscaled" src="https://github.com/user-attachments/assets/285344ec-834a-4eef-9809-f60647b02407" />
 
 <sup> *Magni Mini solder bridge locations* </sup>
 
 The "E" pads next to the PWM 4 and 5 output pads can be used to enable stretching to access extended PWM (500-2500) on the respective channels.  This is intended for use with compatible servos.  By default (when unbridged), this feature is disabled.
+
+The "WSwap" pad alters the channel assignment to swap the drive and weapon motor inputs.  When bridged, the weapon PWM output will be sourced from CH1, and the drive/mix information from CH2 and CH3.  This is intended for people who prefer to use CH1 for weapon control.
 
 The "Coasting" pad disables motor breaking and enables motor coasting when bridged.  This is not recommended based on personal experience and the motor driver manufacturer's recommendation, but is available as a feature if desired.
 
@@ -247,13 +258,15 @@ The LED will flash green in the software settings edit mode to confirm settings 
 ## Settings
 There are two major ways to change settings on the Magni Mini - in [hardware](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#hardware) and in [software](https://github.com/anonymous-k1wi/Magni-Mini/blob/main/README.md#software).
 ### Hardware
-All hardware settings changed by bridging solder pads on the board, labelled on the diagram below.  These are set as physical solder bridges that are read on power on to prevent accidental software overwrites and to ensure purposeful usage.  Do not solder bridges while board is actively powered as it will not change the setting until the next reboot (and you should not solder actively powered electronics).
+All hardware settings changed by bridging solder pads on the board, labelled on the diagram below.  These are set as physical solder bridges that are read on power on to prevent accidental software overwrites and to ensure purposeful usage.  Do not solder bridges while board is actively powered!  It is dangerous to solder to powered electronics and it will not change the setting until the next reboot.
 
 <img width="792" height="500" alt="magni_solder_bridges_downscaled" src="https://github.com/user-attachments/assets/285344ec-834a-4eef-9809-f60647b02407" />
 
 <sup> *Magni Mini solder bridge locations* </sup>
 
 The "E" pads next to the PWM 4 and 5 output pads can be used to enable extended PWM (500-2500) on the respective channels.  This is intended for use with compatible servos and can extend the turning angle range.  By default (when unbridged), this feature is disabled and a "standard" PWM signal (1000-2000) is output.  This feature is not provided for the PWM 1 output pad (W) as extended PWM is generally not used with weapon ESCs.
+
+The "WSwap" pad alters the channel assignment to swap the drive and weapon motor inputs.  By default, CH1 and CH2 are assigned to drive and CH3 is assigned to weapon to best reflect EdgeTX default channel order and ELRS default failsafe values.  When bridged, the weapon PWM output will be sourced from CH1 instead of CH3, and the drive/mix information will be sourced from CH2 and CH3 instead of CH1 and CH2.  This features is intended for people who prefer to use CH1 for weapon control.
 
 The "Coasting" pad disables motor breaking and enables motor coasting when bridged.  This is not recommended based on personal experience and the motor driver manufacturer's recommendation, but is available as a feature if desired.  This could *potentially* be useful in builds that already have a high drivetrain resistance and will stop quickly, but this should be preformed at your own risk.
 
@@ -287,9 +300,6 @@ Check the following likely configuration issues:
 
 ### How do I fix PWM Output 5 is jumping between low and high values?
 By ELRS defaults, only channels 1-4 are sent at a full resolution, which is common for drones.  This can be changed.  In the ELRS Lua script, set the [packet rate and switch mode](https://www.expresslrs.org/software/switch-config/#channel-update-rate-versus-packet-rate) to one compatible with full resolution signals on channel 5.   Recommended settings are 333 and full resolution.
-
-### Why is weapon on channel 1?
-Safety.  The ELRS channels are sent as a single packet to the receiver, and the Magni Mini has to decode them.  This process starts with the first channel and ends with the last, which means that the channel 1 is processed first.  Since the weapon should have priority in any safety-critical moment, it is assigned to channel 1.
 
 ### Why aren't my motors moving?
 Due to internal current protections in the motor drivers, motors with too low of an internal resistance may register as a "short", causing the motor drivers to stop sending current to prevent the motor from blowing up.  This is usually seen in cases where the input voltage far exceeds the recommended voltage for the motors (i.e. trying to run an N20 motor off of a 6s battery). 
